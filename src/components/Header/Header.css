@@ -1,0 +1,8 @@
+header {
+    min-height: 250px;
+    background: url("../../assets/img/hero-image-wr.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: grid;
+    place-content: center;
+}
