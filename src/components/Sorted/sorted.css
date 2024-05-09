@@ -1,0 +1,26 @@
+.sorted label {
+    color: #6C727F;
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.sorted select {
+    min-height: 40px;
+    width: 100%;
+    background-color: #1d1d1e;
+    padding: 10px;
+    color: white;
+    font-weight: 500;
+    border: 2px solid #282B30;
+    border-radius: 8px;
+    appearance: none;
+    background-image: url("../../assets/svg/Expand_down.svg");
+    background-repeat: no-repeat;
+    background-position: 98%;
+    font-size: 1rem;
+}
+.sorted select:focus {
+    outline: none;
+}

@@ -1,8 +1,25 @@
 main {
     padding: 20px;
+    max-width: 1000px;
+    background-color: #1d1d1e;
+    border: 2px solid #282B30;
+    border-radius: 5px;
+    margin: 0 auto;
 }
 .top-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+@media (min-width: 1024px) {
+    main {
+        margin-top: -70px;
+    }
+    .main-app {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+    }
 }

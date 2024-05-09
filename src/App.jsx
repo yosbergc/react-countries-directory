@@ -2,6 +2,7 @@ import './App.css'
 import { Header } from './components/Header/Header'
 import { CountryCounter } from './components/CountryCounter/CountryCounter'
 import { Search } from './components/Search/Search'
+import { Sorted } from './components/Sorted/Sorted'
 function App() {
 
   return (
@@ -11,6 +12,14 @@ function App() {
         <section className="top-section">
           <CountryCounter />
           <Search />
+        </section>
+        <section className="main-app">
+          <section className="filters">
+            <Sorted />
+          </section>
+          <section className="countries">
+            
+          </section>
         </section>
       </main>
     </>
