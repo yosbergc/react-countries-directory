@@ -7,7 +7,7 @@
     padding: 10px;
     gap: 10px;
     width: 100%;
-    max-width: 300px;
+    max-width: 350px;
 }
 .search-container input {
     height: 100%;
@@ -15,7 +15,8 @@
     background: none;
     width: max-content;
     color: white;
-    font-size: 1rem;
+    font-size: 0.875rem;
+    width: 100%;
 }
 .search-container input:focus {
     outline: none;
