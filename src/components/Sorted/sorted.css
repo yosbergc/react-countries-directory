@@ -1,6 +1,6 @@
 .sorted label {
     color: #6C727F;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: 600;
     display: inline-block;
     width: 100%;
@@ -19,7 +19,7 @@
     background-image: url("../../assets/svg/Expand_down.svg");
     background-repeat: no-repeat;
     background-position: 98%;
-    font-size: 1rem;
+    font-size: .875rem;
 }
 .sorted select:focus {
     outline: none;

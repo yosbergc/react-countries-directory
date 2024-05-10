@@ -1,0 +1,29 @@
+h3 {
+    color: #6C727F;
+    font-size: 0.75rem;
+    display: block;
+    width: 100%;
+    font-weight: 600;
+}
+.region-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+.region-filter label {
+    color: #6C727F;
+    font-weight: 600;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: .875rem;
+    cursor: pointer;
+}
+.region-filter input {
+    display: none;
+}
+.region-filter input:checked + label {
+    background-color: #282B30;
+    color: white;
+}
