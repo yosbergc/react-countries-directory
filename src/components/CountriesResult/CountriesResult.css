@@ -1,0 +1,11 @@
+.countries-result {
+    padding: 20px;
+}
+.countries-result-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    color: #6a707e;
+    font-size: 0.75rem;
+    padding: 10px 0px;
+    border-bottom: 2px solid #2a2c30;
+}

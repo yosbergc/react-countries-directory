@@ -5,6 +5,7 @@ import { Search } from './components/Search/Search'
 import { Sorted } from './components/Sorted/Sorted'
 import { Regions } from './components/Regions/Regions'
 import { Status } from './components/Status/Status'
+import { CountriesResult } from './components/CountriesResult/CountriesResult'
 function App() {
 
   return (
@@ -21,9 +22,7 @@ function App() {
             <Regions />
             <Status />
           </section>
-          <section className="countries">
-
-          </section>
+          <CountriesResult />
         </section>
       </main>
     </>
