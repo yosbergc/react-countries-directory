@@ -1,0 +1,35 @@
+.status-container {
+    color: white;
+    display: grid;
+    gap: 10px;
+    padding: 20px 0px;
+}
+.status-container h2 {
+    color: #6C727F;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+.statusSingle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.statusSingle label {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+.statusSingle input:checked + .check {
+    background: url("../../assets/svg/Done_round.svg") #4f80ec;
+    background-size: cover;
+    border-color: #4f80ec;
+}
+.statusSingle .check {
+    min-width: 20px;
+    min-height: 20px;
+    display: flex;
+    border: 2px solid #6a707c;
+    border-radius: 4px;
+}
+.status-container input {
+    display: none;
+}

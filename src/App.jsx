@@ -4,6 +4,7 @@ import { CountryCounter } from './components/CountryCounter/CountryCounter'
 import { Search } from './components/Search/Search'
 import { Sorted } from './components/Sorted/Sorted'
 import { Regions } from './components/Regions/Regions'
+import { Status } from './components/Status/Status'
 function App() {
 
   return (
@@ -18,6 +19,7 @@ function App() {
           <section className="filters">
             <Sorted />
             <Regions />
+            <Status />
           </section>
           <section className="countries">
 
