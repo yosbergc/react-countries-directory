@@ -7,7 +7,6 @@ import { Regions } from './components/Regions/Regions'
 import { Status } from './components/Status/Status'
 import { CountriesResult } from './components/CountriesResult/CountriesResult'
 function App() {
-
   return (
     <>
       <Header/>

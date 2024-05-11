@@ -1,0 +1,30 @@
+.single-country-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    padding: 10px 10px;
+    border-radius: 4px;
+}
+.single-country-overview img {
+    width: 40px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.single-country-overview:hover {
+    background-color: rgb(24, 22, 22);
+}
+.isMobile {
+    display: none;
+}
+@media (min-width: 640px) {
+    .single-country-overview {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .isMobile {
+        display: block;
+    }
+}

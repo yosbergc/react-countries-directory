@@ -3,9 +3,14 @@
 }
 .countries-result-header {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     color: #6a707e;
     font-size: 0.75rem;
-    padding: 10px 0px;
+    padding: 10px 10px;
     border-bottom: 2px solid #2a2c30;
+}
+@media (min-width: 640px) {
+    .countries-result-header {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
