@@ -24,15 +24,18 @@ function useFilters () {
             if (everyRegions) {
                 regionsValidation = true;
             } else {
-                console.log('Al menos un filtro de región es activado')
-        }
-
+                regionsValidation = false;
+            }
+        const activeRegions = regions.filter(region => region[1] === true);
         const filtered = order.filter(country => {
             const query = filters.query === '' || country.name.common.startsWith(filters.query);
             const isMember = filters.isMember === false || country.unMember === true;
             const isIndependent = filters.isIndependent === false || country.independent === true;
-
-            return query && regionsValidation && isMember && isIndependent;
+            let regionFinal = true;
+            if (!regionsValidation) {
+                regionFinal = activeRegions.some(region => region[0].toLowerCase() === country.region.toLowerCase())
+            }
+            return query && regionFinal && isMember && isIndependent;
         })
         return filtered;
     }
