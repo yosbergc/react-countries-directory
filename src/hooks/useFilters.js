@@ -47,6 +47,11 @@ function useFilters () {
                 return a.name.common.localeCompare(b.name.common)
             })
         }
+        if (sortBy === 'area'){
+            return countries.sort((a, b) => {
+                return b.area - a.area
+            })
+        }
     }
     return {filters, filterCountries, changeOrder}
 }
