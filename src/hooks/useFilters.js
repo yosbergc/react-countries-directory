@@ -53,6 +53,11 @@ function useFilters () {
             })
         }
     }
-    return {filters, filterCountries, changeOrder}
+    function searchCountry(query) {
+        const prevFilters = {...filters}
+        prevFilters.query = query;
+        setFilters(prevFilters)
+    }
+    return {filters, filterCountries, changeOrder, searchCountry}
 }
 export { useFilters }
