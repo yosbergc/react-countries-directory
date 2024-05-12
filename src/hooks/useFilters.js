@@ -3,12 +3,12 @@ const initialFilter = {
     query: '',
     sortBy: 'population',
     region: {
-        Americas: false,
-        Antarctic: false,
-        Africa: false,
-        Asia: false,
-        Europe: false,
-        Oceania: false
+        americas: false,
+        antarctic: false,
+        africa: false,
+        asia: false,
+        europe: false,
+        oceania: false
     },
     isMember: false,
     isIndependent: false
@@ -18,18 +18,24 @@ function useFilters () {
 
     function filterCountries(countries) {
         const order = orderCountries(countries)
+        const regions = Object.entries(filters.region);
+        const everyRegions = regions.every(region => region[1] === false)
+        let regionsValidation;
+            if (everyRegions) {
+                regionsValidation = true;
+            } else {
+                console.log('Al menos un filtro de región es activado')
+        }
+
         const filtered = order.filter(country => {
             const query = filters.query === '' || country.name.common.startsWith(filters.query);
-            const region = filters.region;
-            
             const isMember = filters.isMember === false || country.unMember === true;
             const isIndependent = filters.isIndependent === false || country.independent === true;
 
-            return query && region && isMember && isIndependent;
+            return query && regionsValidation && isMember && isIndependent;
         })
         return filtered;
     }
-
     function changeOrder(newOrder) {
         const currentFilter = {...filters}
         currentFilter.sortBy = newOrder;
@@ -68,6 +74,11 @@ function useFilters () {
         newFilters.isIndependent = newValue
         setFilters(newFilters)
     }
-    return {filters, filterCountries, changeOrder, searchCountry, isUnitedNationsMember, isIndependent}
+    function changeRegion(key, newValue) {
+        const newFilters = {...filters}
+        newFilters.region[key] = newValue;
+        setFilters(newFilters)
+    }
+    return {filters, filterCountries, changeOrder, searchCountry, isUnitedNationsMember, isIndependent, changeRegion}
 }
 export { useFilters }

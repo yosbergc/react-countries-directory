@@ -8,7 +8,7 @@ import { Status } from './components/Status/Status'
 import { CountriesResult } from './components/CountriesResult/CountriesResult'
 import { useCountries } from './hooks/useCountries'
 function App() {
-  const { filteredCountries, changeOrder, filteredLength, searchCountry, isUnitedNationsMember, isIndependent} = useCountries()
+  const { filteredCountries, changeOrder, filteredLength, searchCountry, isUnitedNationsMember, isIndependent, changeRegion} = useCountries()
   return (
     <>
       <Header/>
@@ -20,7 +20,7 @@ function App() {
         <section className="main-app">
           <section className="filters">
             <Sorted onChange={changeOrder}/>
-            <Regions />
+            <Regions onChange={changeRegion} />
             <Status onUNChange={isUnitedNationsMember} onIndependentChange={isIndependent}/>
           </section>
           <CountriesResult filteredCountries={filteredCountries}/>
