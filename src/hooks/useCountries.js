@@ -4,9 +4,9 @@ import countriesList from '../mockups/response.json'
 
 function useCountries() {
     const [countries] = React.useState(countriesList)
-    const {filters, filterCountries, changeOrder, searchCountry} = useFilters()
+    const {filters, filterCountries, changeOrder, searchCountry, isUnitedNationsMember, isIndependent} = useFilters()
     const filteredCountries = filterCountries(countries);
     const filteredLength = filteredCountries.length;
-    return { filters, filteredCountries, changeOrder, filteredLength, searchCountry }
+    return { filters, filteredCountries, changeOrder, filteredLength, searchCountry, isUnitedNationsMember, isIndependent }
 }
 export { useCountries }

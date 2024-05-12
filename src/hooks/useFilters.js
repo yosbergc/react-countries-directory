@@ -58,6 +58,16 @@ function useFilters () {
         prevFilters.query = query;
         setFilters(prevFilters)
     }
-    return {filters, filterCountries, changeOrder, searchCountry}
+    function isUnitedNationsMember(newValue) {
+        const newFilters = {...filters};
+        newFilters.isMember = newValue;
+        setFilters(newFilters)
+    }
+    function isIndependent(newValue) {
+        const newFilters = {...filters}
+        newFilters.isIndependent = newValue
+        setFilters(newFilters)
+    }
+    return {filters, filterCountries, changeOrder, searchCountry, isUnitedNationsMember, isIndependent}
 }
 export { useFilters }

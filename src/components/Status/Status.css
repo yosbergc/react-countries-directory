@@ -17,6 +17,7 @@
 .statusSingle label {
     font-size: 0.875rem;
     font-weight: 600;
+    cursor: pointer;
 }
 .statusSingle input:checked + .check {
     background: url("../../assets/svg/Done_round.svg") #4f80ec;
