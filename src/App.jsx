@@ -8,18 +8,18 @@ import { Status } from './components/Status/Status'
 import { CountriesResult } from './components/CountriesResult/CountriesResult'
 import { useCountries } from './hooks/useCountries'
 function App() {
-  const { filteredCountries } = useCountries()
+  const { filteredCountries, changeOrder, filteredLength} = useCountries()
   return (
     <>
       <Header/>
       <main>
         <section className="top-section">
-          <CountryCounter />
+          <CountryCounter filteredLength={filteredLength}/>
           <Search />
         </section>
         <section className="main-app">
           <section className="filters">
-            <Sorted />
+            <Sorted onChange={changeOrder}/>
             <Regions />
             <Status />
           </section>

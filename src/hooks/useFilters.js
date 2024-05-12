@@ -1,7 +1,7 @@
 import React from "react"
 const initialFilter = {
     query: '',
-    sortBy: 'Population',
+    sortBy: 'population',
     region: {
         Americas: false,
         Antarctic: false,
@@ -29,14 +29,25 @@ function useFilters () {
         })
         return filtered;
     }
+
+    function changeOrder(newOrder) {
+        const currentFilter = {...filters}
+        currentFilter.sortBy = newOrder;
+        setFilters(currentFilter)
+    }
     function orderCountries(countries) {
         const sortBy = filters.sortBy;
-        if (sortBy === 'Population'){
+        if (sortBy === 'population'){
             return countries.sort((a, b) => {
                 return b.population - a.population
             })
         }
+        if (sortBy === 'alphabetical'){
+            return countries.sort((a, b) => {
+                return a.name.common.localeCompare(b.name.common)
+            })
+        }
     }
-    return {filters, filterCountries, orderCountries}
+    return {filters, filterCountries, changeOrder}
 }
 export { useFilters }

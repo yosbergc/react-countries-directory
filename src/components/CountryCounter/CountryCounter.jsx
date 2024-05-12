@@ -1,7 +1,7 @@
 import './CountryCounter.css'
-function CountryCounter() {
+function CountryCounter({ filteredLength }) {
  return <section className='counter'>
-    <p>Found 234 Countries</p>
+    <p>Found {filteredLength} Countries</p>
  </section>
 }
 export { CountryCounter }

@@ -2,7 +2,6 @@ import './CountriesResult.css'
 import { SingleCountryContainer } from '../SingleCountryContainer/SingleCountryContainer'
 
 function CountriesResult({ filteredCountries }) {
-    console.log(filteredCountries)
     return <section className='countries-result'>
         <section className='countries-result-header'>
             <h4>Flag</h4>
