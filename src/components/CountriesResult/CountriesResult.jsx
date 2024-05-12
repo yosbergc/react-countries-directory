@@ -1,8 +1,8 @@
 import './CountriesResult.css'
 import { SingleCountryContainer } from '../SingleCountryContainer/SingleCountryContainer'
-import Countries from '../../mockups/response.json'
 
-function CountriesResult() {
+function CountriesResult({ filteredCountries }) {
+    console.log(filteredCountries)
     return <section className='countries-result'>
         <section className='countries-result-header'>
             <h4>Flag</h4>
@@ -10,7 +10,7 @@ function CountriesResult() {
             <h4 className='isMobile'>Population</h4>
             <h4 className='isMobile'>Area (km²)</h4>
         </section>
-        <SingleCountryContainer countryList={Countries}/>
+        <SingleCountryContainer countryList={filteredCountries}/>
     </section>
 }
 export { CountriesResult }

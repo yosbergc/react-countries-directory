@@ -6,7 +6,9 @@ import { Sorted } from './components/Sorted/Sorted'
 import { Regions } from './components/Regions/Regions'
 import { Status } from './components/Status/Status'
 import { CountriesResult } from './components/CountriesResult/CountriesResult'
+import { useCountries } from './hooks/useCountries'
 function App() {
+  const { filteredCountries } = useCountries()
   return (
     <>
       <Header/>
@@ -21,7 +23,7 @@ function App() {
             <Regions />
             <Status />
           </section>
-          <CountriesResult />
+          <CountriesResult filteredCountries={filteredCountries}/>
         </section>
       </main>
     </>
