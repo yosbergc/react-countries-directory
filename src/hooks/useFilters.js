@@ -28,7 +28,7 @@ function useFilters () {
             }
         const activeRegions = regions.filter(region => region[1] === true);
         const filtered = order.filter(country => {
-            const query = filters.query === '' || country.name.common.startsWith(filters.query);
+            const query = filters.query === '' || country.name.common.toLowerCase().startsWith(filters.query.toLowerCase());
             const isMember = filters.isMember === false || country.unMember === true;
             const isIndependent = filters.isIndependent === false || country.independent === true;
             let regionFinal = true;
