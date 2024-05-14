@@ -7,8 +7,9 @@ import { Regions } from './components/Regions/Regions'
 import { Status } from './components/Status/Status'
 import { CountriesResult } from './components/CountriesResult/CountriesResult'
 import { useCountries } from './hooks/useCountries'
+import { Loading } from './components/Loading/Loading'
 function App() {
-  const { filteredCountries, changeOrder, filteredLength, searchCountry, isUnitedNationsMember, isIndependent, changeRegion} = useCountries()
+  const { filteredCountries, changeOrder, filteredLength, searchCountry, isUnitedNationsMember, isIndependent, changeRegion, isLoading} = useCountries()
   return (
     <>
       <Header/>
@@ -23,7 +24,7 @@ function App() {
             <Regions onChange={changeRegion} />
             <Status onUNChange={isUnitedNationsMember} onIndependentChange={isIndependent}/>
           </section>
-          <CountriesResult filteredCountries={filteredCountries}/>
+          {isLoading ? <Loading/>  : <CountriesResult filteredCountries={filteredCountries}/>}
         </section>
       </main>
     </>

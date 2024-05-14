@@ -1,0 +1,16 @@
+.loading {
+    animation: loading 1s infinite;
+}
+.loadingContainer {
+    padding: 20px;
+    display: grid;
+    place-content: center;
+}
+@keyframes loading {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
