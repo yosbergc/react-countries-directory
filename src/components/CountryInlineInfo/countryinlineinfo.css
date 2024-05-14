@@ -1,0 +1,13 @@
+.inline-info-single {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0px;
+}
+.title {
+    color: #6C727F;
+    font-weight: 500;
+}
+.value {
+    color: #d3d5db;
+    font-weight: 500;
+}
