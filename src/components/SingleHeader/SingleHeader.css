@@ -1,0 +1,12 @@
+.SingleHeader {
+    color: #d3d5db;
+    margin-top: -100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.SingleHeader h4 {
+    font-weight: 500;
+}

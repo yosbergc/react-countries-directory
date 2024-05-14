@@ -13,7 +13,7 @@ function SingleCountryContainer({ countryList }) {
                 area={country.area}
                 flagSrc={country.flags.svg}
                 key={country.name.common}
-                onClick={() => navigate(`/country/${country.name.common}`)}
+                onClick={() => navigate(`/country/${country.name.common.toLowerCase()}`)}
             />
         })}
         </section>

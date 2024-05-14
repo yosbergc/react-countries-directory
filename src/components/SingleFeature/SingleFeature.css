@@ -1,0 +1,15 @@
+.single-feature-country {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #282a31;
+    border-radius: 10px;
+    width: fit-content;
+    color: #d3d5db;
+    font-weight: 500;
+}
+.single-feature-separator {
+    border-right: 1px solid #1c1d1f;
+    height: 30px;
+}
