@@ -7,6 +7,10 @@
     align-items: center;
     gap: 10px;
 }
+.SingleHeader h2 {
+    font-size: 2rem;
+    margin-top: 20px;
+}
 .SingleHeader h4 {
     font-weight: 500;
 }

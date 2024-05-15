@@ -5,10 +5,12 @@ import { useSingleCountry } from '../../hooks/useSingleCountry'
 import { SingleHeader } from '../../components/SingleHeader/SingleHeader'
 import { SingleFeature } from '../../components/SingleFeature/SingleFeature'
 import { CountryInlineInfo } from '../../components/CountryInlineInfo/CountryInlineInfo'
+import { CloseCountry } from '../../components/CloseCountry/CloseCountry'
+import { useNavigate } from 'react-router-dom'
 function CountryPage() {
     const { country } = useParams()
-    const {singleCountrySelected, loading, error} = useSingleCountry(country)
-    console.log(singleCountrySelected)
+    const {singleCountrySelected, loading, error, closeCountries} = useSingleCountry(country)
+    const navigate = useNavigate()
     return (<>
         <Header/>
         <main>
@@ -35,28 +37,49 @@ function CountryPage() {
         {
         !loading && !error && 
         <section className='single-country-body'>
+            <hr className='single'/>
             <CountryInlineInfo
             title={"Capital"}
             value={singleCountrySelected.capital}
             />
+            <hr className='single'/>
             <CountryInlineInfo
             title={"Subregion"}
             value={singleCountrySelected.subregion}
             />
+            <hr className='single'/>
             <CountryInlineInfo
             title={"Languages"}
             value={singleCountrySelected.languages}
             />
+            <hr className='single'/>
             <CountryInlineInfo
             title={"Currencies"}
             value={singleCountrySelected.currencies}
             />
+            <hr className='single'/>
             <CountryInlineInfo
             title={"Continents"}
             value={singleCountrySelected.continents}
             />
+            <hr className='single'/>
         </section>
         }
+        <section className='neightbouring'>
+            <h5>Neightbouring Countries</h5>
+            <section className="close-countries-container">
+                {closeCountries && closeCountries.map(country => {
+                    return <CloseCountry 
+                    key={country.name.common}
+                    countryName={country.name.common}
+                    countrySrc={country.flags.png}
+                    onClick={() => navigate(`/country/${country.name.common.toLowerCase()}`, {
+                        replace: true
+                    })}
+                    />
+                })}
+            </section>
+        </section>
         </main>
     </>)
 }
