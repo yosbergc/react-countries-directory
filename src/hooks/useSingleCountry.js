@@ -23,7 +23,7 @@ function useSingleCountry(country) {
             setError(true)
             setLoading(false)
         })
-    }, [])
+    }, [country])
     return {singleCountrySelected, loading, error, closeCountries}
 }
 export { useSingleCountry }

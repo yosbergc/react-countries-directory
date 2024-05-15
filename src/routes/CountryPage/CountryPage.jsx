@@ -73,9 +73,12 @@ function CountryPage() {
                     key={country.name.common}
                     countryName={country.name.common}
                     countrySrc={country.flags.png}
-                    onClick={() => navigate(`/country/${country.name.common.toLowerCase()}`, {
-                        replace: true
-                    })}
+                    onClick={() => {
+                        window.scrollTo({
+                            top: 0
+                        })
+                        navigate(`/country/${country.name.common.toLowerCase()}`)
+                    }}
                     />
                 })}
             </section>
